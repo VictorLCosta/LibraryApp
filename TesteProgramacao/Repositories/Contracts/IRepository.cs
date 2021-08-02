@@ -8,7 +8,7 @@ namespace TesteProgramacao.Repositories.Contracts
         Task<T> Get(int id);
         Task<IEnumerable<T>> GetAll();
         Task Add(T entity);
-        Task Update(T entity);
+        void Update(T entity);
         Task Delete(int id);
     }
 }

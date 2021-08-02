@@ -1,0 +1,36 @@
+@page "{id:int}"
+@model TesteProgramacao.Pages.Authors.Edit
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Edit Author</h1>
+<br />
+<form method="POST">
+    <input type="hidden" asp-for="Author.Id">
+    <div class="form-group">
+        <label asp-for="Author.Name">Name</label>
+        <input asp-for="Author.Name" class="form-control" placeholder="Insira o nome do autor" />
+        <span style="color: red;" asp-validation-for="Author.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Author.Cpf">CPF</label>
+        <input asp-for="Author.Cpf" class="form-control cpf" placeholder="Insira o CPF do autor" />
+        <span style="color: red;" asp-validation-for="Author.Cpf" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Author.Cellphone">Cellphone</label>
+        <input asp-for="Author.Cellphone" class="form-control" placeholder="(11)96816964" />
+        <span style="color: red;" asp-validation-for="Author.Cellphone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Author.Email">Email</label>
+        <input type="email" asp-for="Author.Email" class="form-control" placeholder="example@outlook.com" />
+        <span style="color: red;" asp-validation-for="Author.Email" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="./Index" class="btn btn-danger">Cancel</a>
+
+    @Html.AntiForgeryToken()
+</form>

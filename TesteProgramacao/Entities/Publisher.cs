@@ -9,7 +9,7 @@ namespace TesteProgramacao.Entities
         public string Name { get; set; }
 
         #region Address
-        public string State { get; set; }
+        public string Estate { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
         public int Number { get; set; }

@@ -1,0 +1,45 @@
+@page "{id:int}"
+@model TesteProgramacao.Pages.Edit
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Book</h1>
+<br />
+<form method="POST">
+    <input type="hidden" asp-for="Book.Id">
+    <div class="form-group">
+        <label asp-for="Book.Name">Name</label>
+        <input asp-for="Book.Name" class="form-control" placeholder="Insira o título do livro" />
+        <span style="color: red;" asp-validation-for="Book.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Book.Edition">Edition</label>
+        <input asp-for="Book.Edition" class="form-control" placeholder="Insira a edição do livro" />
+        <span style="color: red;" asp-validation-for="Book.Edition" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Book.ReleaseDate">Release Date</label>
+        <input type="date" asp-for="Book.ReleaseDate" class="form-control" />
+        <span style="color: red;" asp-validation-for="Book.ReleaseDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Book.AuthorId">Author</label>
+        <select asp-for="Book.AuthorId" asp-items="ViewBag.Authors" class="form-control">
+            <option value="">Select</option>
+        </select>
+        <span style="color: red;" asp-validation-for="Book.AuthorId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Book.PublisherId">Publisher</label>
+        <select asp-for="Book.PublisherId" asp-items="ViewBag.Publishers" class="form-control">
+            <option value="">Select</option>
+        </select>
+        <span style="color: red;" asp-validation-for="Book.PublisherId" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="./Index" class="btn btn-danger">Cancel</a>
+
+    @Html.AntiForgeryToken()
+</form>

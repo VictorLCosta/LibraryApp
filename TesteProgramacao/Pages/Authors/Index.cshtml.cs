@@ -1,34 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using TesteProgramacao.Entities;
 using TesteProgramacao.Interfaces;
 
-namespace TesteProgramacao.Pages
+namespace TesteProgramacao.Pages.Authors
 {
-    public class IndexModel : PageModel
+    public class Index : PageModel
     {
         private readonly IUnitOfWork _unit;
 
-        public IndexModel(IUnitOfWork unit)
+        public Index(IUnitOfWork unit)
         {
             _unit = unit;
         }
 
-        public IEnumerable<Book> Books { get; private set; }
+        public IEnumerable<Author> Authors { get; private set; }
 
         public async Task OnGetAsync()
         {
-            Books = await _unit.BooksRepository.GetAllWithAuthor();
+            Authors = await _unit.AuthorRepository.GetAll();
             _unit.Dispose();
         }
 
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
-            await _unit.BooksRepository.Delete(id);
+            await _unit.AuthorRepository.Delete(id);
             await _unit.Complete();
             _unit.Dispose();
 

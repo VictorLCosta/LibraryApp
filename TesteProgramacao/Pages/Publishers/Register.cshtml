@@ -1,0 +1,50 @@
+@page
+@model TesteProgramacao.Pages.Publishers.Register
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Add Publisher</h1>
+<br />
+<form method="POST">
+    <div class="form-group">
+        <label asp-for="Publisher.Name">Name</label>
+        <input asp-for="Publisher.Name" class="form-control" placeholder="Insira o nome da publicadora" />
+        <span style="color: red;" asp-validation-for="Publisher.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Publisher.Cnpj">CPF</label>
+        <input asp-for="Publisher.Cnpj" class="form-control cnpj" placeholder="Insira o CNPJ da publicadora" />
+        <span style="color: red;" asp-validation-for="Publisher.Cnpj" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Publisher.Estate">Estate</label>
+        <input asp-for="Publisher.Estate" class="form-control" placeholder="SP" />
+        <span style="color: red;" asp-validation-for="Publisher.Estate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Publisher.City">City</label>
+        <input asp-for="Publisher.City" class="form-control" placeholder="São Bernardo do Campo" />
+        <span style="color: red;" asp-validation-for="Publisher.City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Publisher.Street">Street</label>
+        <input type="text" asp-for="Publisher.Street" class="form-control" />
+        <span style="color: red;" asp-validation-for="Publisher.Street" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Publisher.Number">Number</label>
+        <input type="number" asp-for="Publisher.Number" class="form-control" />
+        <span style="color: red;" asp-validation-for="Publisher.Number" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Publisher.Complement">Complement</label>
+        <input type="text" asp-for="Publisher.Complement" class="form-control" />
+        <span style="color: red;" asp-validation-for="Publisher.Complement" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="./Index" class="btn btn-danger">Cancel</a>
+
+    @Html.AntiForgeryToken()
+</form>

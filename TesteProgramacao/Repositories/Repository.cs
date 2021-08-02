@@ -36,9 +36,8 @@ namespace TesteProgramacao.Repositories
             return await _context.Set<T>().ToListAsync(); 
         }
 
-        public async Task Update(T entity)
+        public void Update(T entity)
         {
-            await Task.Yield();
             _context.Set<T>().Update(entity);
         }
     }

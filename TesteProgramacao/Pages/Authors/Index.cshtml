@@ -1,19 +1,19 @@
-﻿@page
-@model IndexModel
+@page
+@model TesteProgramacao.Pages.Authors.Index
 @{
     ViewData["Title"] = "Home page";
 }
 
-<h1 class="mt-4">Books</h1>
+<h1 class="mt-4">Author</h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Dashboard</li>
 </ol>
 <div class="row">
     <div class="col-md-6">
         <div class="card bg-success text-white mb-4">
-            <div class="card-body">New Book</div>
+            <div class="card-body">New Author</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" asp-page="./Register">Add a new book</a>
+                <a class="small text-white stretched-link" asp-page="./Register">Add a new author</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
@@ -22,7 +22,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        All registered books
+        All registered authors
     </div>
     <div class="card-body">
         <form method="post">
@@ -31,9 +31,9 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Edition</th>
-                    <th>Release Date</th>
-                    <th>Author</th>
+                    <th>CPF</th>
+                    <th>Celphone</th>
+                    <th>Email</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -41,21 +41,21 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Edition</th>
-                    <th>Release Date</th>
-                    <th>Author</th>
+                    <th>CPF</th>
+                    <th>Celphone</th>
+                    <th>Email</th>
                     <th>Actions</th>
                 </tr>
             </tfoot>
             <tbody>
-                @foreach (var item in Model.Books)
+                @foreach (var item in Model.Authors)
                 {
                     <tr>
                         <td>@item.Id</td>
                         <td>@item.Name</td>
-                        <td>@item.Edition</td>
-                        <td>@item.ReleaseDate</td>
-                        <td>@item.Author.Name</td>
+                        <td>@item.Cpf</td>
+                        <td>@item.Cellphone</td>
+                        <td>@item.Email</td>
                         <td>
                             <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
                             <button asp-page-handler="delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</button>
