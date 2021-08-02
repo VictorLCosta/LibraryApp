@@ -1,7 +1,7 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+TODO: Projeto feito em ASP.NET Core, com propósitos de testar minhas habilidades de desenvolvimento. O projeto é integrado a um banco de dados SQL Server e foi baseado no tema Bootstrap gratuito SB Admin: https://startbootstrap.com/template/sb-admin
 
-# Getting Started
+#Getting Started
 TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
 1.	Installation process
 2.	Software dependencies
